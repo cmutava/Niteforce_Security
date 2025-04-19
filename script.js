@@ -71,35 +71,7 @@ const animateOnScroll = function() {
 
 window.addEventListener('scroll', animateOnScroll);
 
-// Mobile menu toggle
-const mobileMenuButton = document.querySelector('.mobile-menu-button');
-const navLinks = document.querySelector('.nav-links');
 
-if (mobileMenuButton) {
-    mobileMenuButton.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
-    });
-
-    // Close menu when clicking on a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenuButton.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!navLinks.contains(e.target) && !mobileMenuButton.contains(e.target) && navLinks.classList.contains('active')) {
-            mobileMenuButton.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
 
 // Cookie consent
 const cookieConsent = function() {

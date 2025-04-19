@@ -10,27 +10,28 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="home">
         <nav class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="SGA Security">
-            </div>
-            <button class="mobile-menu-button">
-                <i class="fas fa-bars menu-icon"></i>
-                <i class="fas fa-times close-icon"></i>
-            </button>
-            <div class="nav-links">
-                <a href="#" class="active">HOME</a>
-                <a href="#">ABOUT US</a>
-                <a href="#">OUR SERVICES</a>
-                <a href="#">NEWS</a>
-                <a href="#">CONTACTS</a>
-            </div>
+          <div class="logo">
+            <img src="images/logo.png" alt="Niteforce_security">
+          </div>
+          <button class="mobile-menu-button" aria-label="Toggle Menu">
+            <i class="fas fa-bars menu-icon"></i>
+            <i class="fas fa-times close-icon"></i>
+          </button>
+          <div class="nav-links">
+            <a href="#home" class="active">HOME</a>
+            <a href="#about">ABOUT US</a>
+            <a href="#service">OUR SERVICES</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#contacts">CONTACTS</a>
+          </div>
         </nav>
-    </header>
+      </header>
+      
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="carousel-slide active">
@@ -41,40 +42,15 @@
                         <button class="cta-button">LEARN MORE ABOUT US</button>
                     </div>
                 </div>
-                <div class="carousel-slide">
-                    <img src="images/security2.jpeg" alt="24/7 Monitoring Services" class="slide-image">
-                    <div class="hero-content">
-                        <h1>24/7 MONITORING & RESPONSE</h1>
-                        <p>Round-the-clock security monitoring and rapid response teams</p>
-                        <button class="cta-button">OUR SERVICES</button>
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/security3.jpg" alt="Advanced Security Technology" class="slide-image">
-                    <div class="hero-content">
-                        <h1>TRAINED GUARD DOGS</h1>
-                        <p>Trained Dogs that are trained to protect your property and family</p>
-                        <button class="cta-button">GET PROTECTED</button>
-                    </div>
-                </div>
+                
             </div>
-            <button class="carousel-control prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-control next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="carousel-indicators">
-                <button class="indicator active"></button>
-                <button class="indicator"></button>
-                <button class="indicator"></button>
-            </div>
+            
         </div>
     </section>
 
     <!-- Welcome Section -->
     <section class="welcome">
-        <h2>WELCOME TO  NITEFORCE SECURITY </h2>
+        <h2 >WELCOME TO  NITEFORCE SECURITY </h2>
         <p>WAbout Niteforce Security Services Ltd.
             Niteforce Security Services Ltd is one of the security firms in Kenya with more than
             1000 employees and a large fleet of vehicles and motorcycles. It started its
@@ -111,7 +87,7 @@
     </section>
 
     <!-- Footprint Section -->
-    <section class="footprint">
+    <section class="footprint" id="service">
         <h2>OUR SERVICES</h2>
         <div class="services-tiles">
             <div class="service-tile">
@@ -189,6 +165,47 @@
         </div>
     </section>
 
+    <!--Gallery Section-->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>OUR GALLERY</h2>
+            <div class="gallery-grid two-row">
+                <div class="gallery-row">
+                    <div class="gallery-item">
+                        <img src="images/security1.jpeg" alt="Security Patrol" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3>Mobile Patrol</h3>
+                            <p>24/7 Security Coverage</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/security2.jpeg" alt="Monitoring Center" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3>Monitoring Center</h3>
+                            <p>Advanced Surveillance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-row">
+                    <div class="gallery-item">
+                        <img src="images/security3.jpg" alt="Guard Dogs" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3>K9 Security</h3>
+                            <p>Trained Protection Units</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/cars.png" alt="Niteforce Security" class="gallery-image">
+                        <div class="gallery-overlay">
+                            <h3>Corporate Identity</h3>
+                            <p>Trusted Security Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Steps Section -->
     <section class="steps">
         <h2>GET SECURED IN 3 EASY STEPS</h2>
@@ -224,8 +241,8 @@
     <section class="clients">
         <h2>OUR HAPPY CLIENTS</h2>
         <div class="client-logos">
-            <img src="images/client1.png" alt="Rubis">
-            <img src="images/client2.png" alt="Gracia Gardens">
+            <img src="images/rubis.JPG" alt="Rubis">
+            <img src="images/gracia gardens.jpg" alt="Gracia Gardens">
             
         </div>
     </section>
@@ -243,7 +260,7 @@
                 <h4>Niteforce Security</h4>
                 <p>We provide comprehensive security solutions...</p>
             </div>
-            <div class="footer-section">
+            <div class="footer-section" id="contacts">
                 <h4>USEFUL LINKS</h4>
                 <ul>
                     <li><a href="#">Location</a>Athi River, Greatwall Estate</li>
@@ -289,6 +306,8 @@
         });
       });
     </script>
+
+    
 
 
 </body>
