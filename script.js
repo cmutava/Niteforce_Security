@@ -1,24 +1,8 @@
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+
 
 // Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.backgroundColor = '#fff';
-        navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-    }
-});
+
 
 // Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,26 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add active class to current section in navigation
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Animation on scroll
 const animateOnScroll = function() {
@@ -71,6 +36,7 @@ const animateOnScroll = function() {
 
 window.addEventListener('scroll', animateOnScroll);
 
+// Mobile Dropdown Navigation
 
 
 // Cookie consent
@@ -94,70 +60,6 @@ const cookieConsent = function() {
 
 document.addEventListener('DOMContentLoaded', cookieConsent);
 
-// Carousel functionality
-const carousel = {
-    currentSlide: 0,
-    slides: document.querySelectorAll('.carousel-slide'),
-    indicators: document.querySelectorAll('.indicator'),
-    interval: null,
-
-    init() {
-        // Add click handlers for controls
-        document.querySelector('.carousel-control.prev').addEventListener('click', () => this.prevSlide());
-        document.querySelector('.carousel-control.next').addEventListener('click', () => this.nextSlide());
-        
-        // Add click handlers for indicators
-        this.indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => this.goToSlide(index));
-        });
-
-        // Start auto-play
-        this.startAutoPlay();
-
-        // Pause auto-play on hover
-        const carousel = document.querySelector('.carousel');
-        carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
-        carousel.addEventListener('mouseleave', () => this.startAutoPlay());
-    },
-
-    goToSlide(index) {
-        // Remove active class from current slide and indicator
-        this.slides[this.currentSlide].classList.remove('active');
-        this.indicators[this.currentSlide].classList.remove('active');
-
-        // Update current slide index
-        this.currentSlide = index;
-
-        // Handle wrapping
-        if (this.currentSlide >= this.slides.length) this.currentSlide = 0;
-        if (this.currentSlide < 0) this.currentSlide = this.slides.length - 1;
-
-        // Add active class to new slide and indicator
-        this.slides[this.currentSlide].classList.add('active');
-        this.indicators[this.currentSlide].classList.add('active');
-    },
-
-    nextSlide() {
-        this.goToSlide(this.currentSlide + 1);
-    },
-
-    prevSlide() {
-        this.goToSlide(this.currentSlide - 1);
-    },
-
-    startAutoPlay() {
-        this.interval = setInterval(() => this.nextSlide(), 5000);
-    },
-
-    stopAutoPlay() {
-        clearInterval(this.interval);
-    }
-};
-
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    carousel.init();
-});
 
 // Service details data
 const serviceDetails = {

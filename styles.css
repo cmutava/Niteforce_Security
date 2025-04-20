@@ -18,31 +18,31 @@ body {
 }
 
 /* Header Styles */
-header {
-    position: fixed;
-    top: 0;
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover underline effect */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
     left: 0;
+    background-color: #125510; /* Tailwind's blue-600 */
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #125510; /* Tailwind's blue-600 */
+  }
+  
+  .nav-link:hover::after {
     width: 100%;
-    background-color: var(--white);
-    z-index: 1000;
-}
-
-
-.logo img {
-    height: 50px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--secondary-color);
-    margin-left: 2rem;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.nav-links a.active {
-    color: var(--primary-color);
-}
+  }
 
 /* Hero Section */
 .hero {
@@ -81,6 +81,12 @@ header {
     height: 100%;
     object-fit: cover;
     z-index: 1;
+}
+
+@media (max-width: 720px) {
+    .small {
+        font-size: small;
+    }
 }
 
 .carousel-slide::before {

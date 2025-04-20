@@ -6,30 +6,50 @@
     <title>Niteforce security</title>
     </title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header id="home">
-        <nav class="navbar">
-          <div class="logo">
-            <img src="images/logo.png" alt="Niteforce_security">
-          </div>
-          <button class="mobile-menu-button" aria-label="Toggle Menu">
-            <i class="fas fa-bars menu-icon"></i>
-            <i class="fas fa-times close-icon"></i>
+    <header class="w-full bg-white shadow-md fixed top-0 left-0 z-50" >
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+          <!-- Logo -->
+          <img src="images/logo.png" style="height: 50px; width: 50px;" >
+    
+          <!-- Nav Links -->
+          <nav class="hidden md:flex space-x-6">
+            <a href="#Home" class="hover:color: #125510">Home</a>
+            <a href="#about" class="hover:color: #125510">About</a>
+            <a href="#service" class="hover:color: #125510">Services</a>
+            <a href="#gallery" class="block hover:color: #125510">Gallery</a>
+            <a href="#contacts" class="hover:color: #125510">Contact</a>
+          </nav>
+    
+          <!-- Hamburger Button -->
+          <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg id="open-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+    
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"/>
+            </svg>
           </button>
-          <div class="nav-links">
-            <a href="#home" class="active">HOME</a>
-            <a href="#about">ABOUT US</a>
-            <a href="#service">OUR SERVICES</a>
-            <a href="#gallery">GALLERY</a>
-            <a href="#contacts">CONTACTS</a>
-          </div>
-        </nav>
-      </header>
-      
-
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col px-4 pb-4 space-y-2">
+          <a href="#Home" class="block hover:color: #125510">Home</a>
+          <a href="#about" class="block hover:color: #125510">About</a>
+          <a href="#service" class="block hover:color: #125510">Services</a>
+          <a href="#gallery" class="block hover:color: #125510">Gallery</a>
+          <a href="#contacts" class="block hover:color: #125510">Contact</a>
+        </div>
+    </header>
     <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="carousel">
@@ -49,7 +69,7 @@
     </section>
 
     <!-- Welcome Section -->
-    <section class="welcome">
+    <section class="welcome" id="Home">
         <h2 >WELCOME TO  NITEFORCE SECURITY </h2>
         <p>WAbout Niteforce Security Services Ltd.
             Niteforce Security Services Ltd is one of the security firms in Kenya with more than
@@ -75,12 +95,12 @@
         <div class="service-card">
             
             <h3>Our Vision</h3>
-            <p> Our vision is to be known as the pacesetter in security service provider in Kenya.</p>
+            <p class="small"> Our vision is to be known as the pacesetter in security service provider in Kenya.</p>
         </div>
         <div class="service-card">
             
             <h3>Our Mission</h3>
-            <p>We have close, open relationships with our customers that generate trust and
+            <p class="small">We have close, open relationships with our customers that generate trust and
                 we work in partnership for the mutual benefit of our organizations.</p>
         </div>
         
@@ -215,21 +235,21 @@
                     <i class="fas fa-phone"></i>
                 </div>
                 <h3>1. LET US CALL YOU</h3>
-                <p>Share us a request and we'll call you and help you protect your space safely.</p>
+                <p class="small">Share us a request and we'll call you and help you protect your space safely.</p>
             </div>
             <div class="step">
                 <div class="step-icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
                 <h3>2. FREE SURVEY & QUOTE</h3>
-                <p>Receive a free security assessment on the premise or area you want secured.</p>
+                <p class="small">Receive a free security assessment on the premise or area you want secured.</p>
             </div>
             <div class="step">
                 <div class="step-icon">
                     <i class="fas fa-check"></i>
                 </div>
                 <h3>3. INSTALLATION</h3>
-                <p>After our assessment, we'll proceed to secure your space in agreed timelines.</p>
+                <p class="small">After our assessment, we'll proceed to secure your space in agreed timelines.</p>
             </div>
         </div>
     </section>
@@ -243,6 +263,8 @@
         <div class="client-logos">
             <img src="images/rubis.JPG" alt="Rubis">
             <img src="images/gracia gardens.jpg" alt="Gracia Gardens">
+            <img src="images/toyota.png" alt="Toyota">
+            
             
         </div>
     </section>
@@ -305,6 +327,19 @@
           isVoice: false,
         });
       });
+    </script>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('open-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        });
     </script>
 
     
